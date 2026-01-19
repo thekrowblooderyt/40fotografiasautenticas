@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Libros PDF</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+    <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
+</head>
+
+<body>
+
+    <!-- Dynamic Background (Mobile Only) -->
+    <div id="dynamicBg"></div>
+    <div id="bgOverlay"></div>
+
+    <!-- Intro Cinematic -->
+    <div id="introOverlay">
+        <div class="intro-text-container">
+            <h1 class="gold-text">40 FOTOGRAFÍAS</h1>
+            <h2 class="gold-text-sub">AUTÉNTICAS 2025</h2>
+        </div>
+    </div>
+
+    <!-- Loading Overlay (Hidden initially, used for transitioning if needed) -->
+    <div id="loadingOverlay">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>Cargando Libro...</h2>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="book-wrapper" id="bookWrapper">
+            <div id="book">
+                <!-- Pages will be injected here via JavaScript -->
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn" class="control-btn" title="Anterior">←</button>
+
+            <div class="page-nav">
+                <input type="number" id="pageInput" min="1" value="1" class="page-input">
+                <span id="pageInfo"> / --</span>
+            </div>
+
+            <button id="nextBtn" class="control-btn" title="Siguiente">→</button>
+
+            <div class="separator"></div>
+
+            <button id="zoomOutBtn" class="control-btn" title="Alejar">-</button>
+            <span id="zoomDisplay">100%</span>
+            <button id="zoomInBtn" class="control-btn" title="Acercar">+</button>
+
+            <div class="separator"></div>
+
+            <button id="fullscreenBtn" class="control-btn" title="Pantalla Completa">⛶</button>
+        </div>
+    </div>
+
+    <!-- Mobile Controls (Hidden on Desktop) -->
+    <div class="mobile-controls">
+        <button id="mPrevBtn" class="m-btn" aria-label="Previous Page">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </button>
+
+        <span id="mPageInfo">1 / --</span>
+
+        <button id="mNextBtn" class="m-btn" aria-label="Next Page">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
