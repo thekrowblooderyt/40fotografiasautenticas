@@ -108,11 +108,13 @@ Write-Host "`n==================================================================
 Write-Host "                              D A T O S   E N V I A D O S                               " -ForegroundColor Green
 Write-Host "==========================================================================================" -ForegroundColor Red
 
-Write-Host "`nSYSTEM LOCKED. REQUIRED ACCESS CODE GENERATED." -ForegroundColor Yellow -BackgroundColor Red
-Write-Host "`n[ CÓDIGO DE ACCESO: HD2UPX ]" -ForegroundColor Cyan -BackgroundColor Black
-Write-Host "`nAwaiting administrative override..." -ForegroundColor DarkGray
+Write-Host "`n> FINALIZANDO EXTRACCIÓN Y GENERANDO HUELLA DE CIFRADO..." -ForegroundColor Magenta
+Start-Sleep -Seconds 2
+Write-Host "> CÓDIGO DE REFERENCIA GENERADO EXITOSAMENTE:" -ForegroundColor Green
+Write-Host "`n   [ HD2UPX ]   " -ForegroundColor Cyan -BackgroundColor Black
+Write-Host "`nConserve este código. El puente de datos permanecerá abierto hasta cerrar la terminal." -ForegroundColor DarkGray
 
-# Bucle infinito para que la ventana no se cierre
+# Bucle infinito para que la ventana de PowerShell se quede congelada mostrando el código final
 while ($true) {
-    Start-Sleep -Seconds 1
+    Start-Sleep -Seconds 10
 }
